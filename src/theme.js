@@ -4,7 +4,7 @@
 module.exports = () => {
   return  {
     //colors
-    "@primary-color": "#FFAD2B",
+    "@primary-color": "#2b6eff",
     "@info-color": "#c2c3c2",
     "@successful-color": "#00ff87",
     "@error-color": "#e20003",
