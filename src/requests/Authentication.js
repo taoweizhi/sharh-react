@@ -1,10 +1,11 @@
-import { urlFor } from "../config";
-import { GET, POST } from "./HttpMethods";
+import { GET, POST, urlFor } from "../utils";
+import { authentication } from "../sitemap";
 
-const urlPrefix = 'authentication';
-const loginUrl = urlFor(`${urlPrefix}/login`);
-const logoutUrl = urlFor(`${urlPrefix}/logout`);
-const signinUrl = urlFor(`${urlPrefix}/signin`);
+const {root, login, logout, signin} = authentication;
+
+const loginUrl = urlFor.call(root)(`${root}/${login}`);
+const logoutUrl = urlFor(`${root}/${logout}`);
+const signinUrl = urlFor(`${root}/${signin}`);
 
 const loginGET = GET(loginUrl);
 const logoutGET = GET(logoutUrl);

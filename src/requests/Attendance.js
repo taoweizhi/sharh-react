@@ -1,10 +1,9 @@
-export {}
+import {GET, POST, urlFor} from "../utils";
+import {attendance} from "../sitemap";
 
-import { urlFor } from "../config";
-import { GET, POST } from "./HttpMethods";
-
-const urlPrefix = 'attendance';
-// TODO 完善
-const centerUrl = urlFor(`${urlPrefix}/center`);
+// TODO 完善, 参考Authentication
+const centerUrl = urlFor();
 const registerUrl = urlFor();
 const validateUrl = urlFor();
+
+export {}

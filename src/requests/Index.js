@@ -1,6 +1,8 @@
-export {}
+import { GET, urlFor } from "../utils";
 
-import { urlFor } from "../config";
-import { GET, POST } from "./HttpMethods";
+// TODO 完善, 参考Authentication
 
-// TODO 完善
+const homeUrl = urlFor();
+const homeGET = GET(homeUrl);
+
+export { homeGET }

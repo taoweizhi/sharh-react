@@ -1,8 +1,5 @@
+import {root} from "./sitemap";
 const _ = require('underscore');
-export { urlFor }
-
-const loadTheme = require('./theme');
-const root = 'lgd.shareh.com.cn';
 
 const urlFor = (url, obj) => {
   if (_.isUndefined(url)) return root;
@@ -13,3 +10,19 @@ const urlFor = (url, obj) => {
     .value();
   return `${root}/${url}${params_str}`
 };
+
+const GET = (url) => {
+  return {
+    method: 'get',
+    url: url
+  }
+};
+const POST = (url, data) => {
+  return {
+    method: 'post',
+    url: url,
+    data: data
+  }
+};
+
+export {urlFor, GET, POST}
