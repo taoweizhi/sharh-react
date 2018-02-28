@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import WrappedAuthentication from './layouts/Authentication'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<WrappedAuthentication />, document.getElementById('root'));
 registerServiceWorker();

@@ -1,7 +1,7 @@
 const _ = require('underscore');
 export { urlFor }
 
-const loadTheme = require('../theme');
+const loadTheme = require('./theme');
 const root = 'lgd.shareh.com.cn';
 
 const urlFor = (url, obj) => {

@@ -1,5 +1,3 @@
-export {loginGET, loginPOST, logoutGET, signinGET, signinPOST}
-
 import { urlFor } from "../config";
 import { GET, POST } from "./HttpMethods";
 
@@ -14,3 +12,5 @@ const signinGET = GET(signinUrl);
 
 const loginPOST = (data) => POST(loginUrl, data);
 const signinPOST = (data) => POST(signinUrl, data);
+
+export {loginGET, loginPOST, logoutGET, signinGET, signinPOST}
