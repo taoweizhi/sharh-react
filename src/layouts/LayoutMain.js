@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Layout, Icon, Row, Col} from 'antd'
+import {Layout, Icon, Col, Menu} from 'antd'
 import {SideBar} from "../components/SideBar";
 import {FootBar} from "../components/FootBar";
 
@@ -11,6 +11,7 @@ class LayoutMain extends Component {
     super(props);
     this.state = {
       collapsed: true,
+      login: false,
     };
   }
 
@@ -33,15 +34,11 @@ class LayoutMain extends Component {
         </Sider>
         <Layout>
           <Header style={{background: '#fff', padding: 0}}>
-            <Row>
-              <Col>
-                <Icon
-                  className="trigger"
-                  type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                  onClick={this.toggle}
-                />
-              </Col>
-            </Row>
+            <Icon
+              className="trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
           </Header>
           <Content style={{margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280}}>
             {this.props.children}
