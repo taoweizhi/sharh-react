@@ -1,4 +1,4 @@
-import {root} from "./sitemap";
+import {root} from "./config/sitemap";
 const _ = require('underscore');
 
 const urlFor = (url, obj) => {
