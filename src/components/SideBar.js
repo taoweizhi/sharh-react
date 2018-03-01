@@ -1,28 +1,27 @@
 import React, {Component} from 'react'
 import {Menu, Icon} from 'antd'
-import {MenuItem} from "./MenuItem";
+import {sideBar} from "../config/layout";
+import {loadMenu} from "../utils";
+
+const SubMenu = Menu.SubMenu;
 
 class SideBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      current: props.mount.current,
-    }
   }
-  handleClick = (e) => {
-    this.setState({current: e.key})
-  };
 
   render() {
     return (
       <Menu
         onClick={this.handleClick}
-        style={{ width: 256 }}
-        defaultSelectedKeys = {[this.state.current]}
+        defaultSelectedKeys={[this.props.mount.current]}
+        style={{ height: '100%', borderRight: 0 }}
         mode="inline"
       >
-        <MenuItem mount={this.props.mount}/>
+        {loadMenu(this.props.mount.menu)}
       </Menu>
     )
   }
 }
+
+export {SideBar}

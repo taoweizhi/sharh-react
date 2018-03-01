@@ -1,5 +1,8 @@
+import React from 'react'
+import {Menu, Icon} from 'antd'
 import {root} from "./config/sitemap";
 const _ = require('underscore');
+const SubMenu = Menu.SubMenu;
 
 const urlFor = (url, obj) => {
   if (_.isUndefined(url)) return root;
@@ -25,4 +28,26 @@ const POST = (url, data) => {
   }
 };
 
-export {urlFor, GET, POST}
+const loadMenu = (menu) => {
+  return menu.map(
+    item => {
+      if (item.hasSubMenu)
+        return (
+          <SubMenu key={item.key} title={item.title}>
+            {loadMenu(item.menu)}
+          </SubMenu>
+        );
+      else
+        return (
+          <Menu.Item
+            key={item.key}
+          >
+            <Icon type={item.icon}/>
+            <span>{item.title}</span>
+          </Menu.Item>
+        )
+    }
+  )
+};
+
+export {urlFor, GET, POST, loadMenu}
